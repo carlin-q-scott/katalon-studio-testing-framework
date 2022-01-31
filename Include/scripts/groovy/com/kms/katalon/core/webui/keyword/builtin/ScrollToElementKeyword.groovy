@@ -78,7 +78,7 @@ public class ScrollToElementKeyword extends WebUIAbstractKeyword {
                 isSwitchIntoFrame = WebUiCommonHelper.switchToParentFrame(to)
                 WebElement webElement = WebUIAbstractKeyword.findWebElement(to)
                 logger.logDebug(MessageFormat.format(StringConstants.KW_LOG_INFO_SCROLLING_TO_OBJ_X, to.getObjectId()))
-                ((JavascriptExecutor) DriverFactory.getWebDriver()).executeScript("arguments[0].scrollIntoView();", webElement)
+                ((JavascriptExecutor) DriverFactory.getWebDriver()).executeScript("arguments[0].scrollIntoView({block: 'center'});", webElement)
                 logger.logPassed(MessageFormat.format(StringConstants.KW_LOG_PASSED_SCROLLING_TO_OBJ_X, to.getObjectId()))
             } finally {
                 if (isSwitchIntoFrame) {
